@@ -1,0 +1,23 @@
+{
+  "name": "wedding_server",
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "staging": "cross-env NODE_ENV=staging nodemon index.js",
+    "start": "cross-env NODE_ENV=production pm2 start index.js --name WEDDING_SERVER"
+  },
+  "dependencies": {
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "debug": "~2.6.9",
+    "express": "^4.17.1",
+    "express-sse": "^0.5.1",
+    "knex": "^0.16.3",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.19.1",
+    "pg": "^7.9.0",
+    "sqlite3": "^5.0.0"
+  }
+}
