@@ -21,7 +21,7 @@ module.exports = (app) => {
     }
   };
 
-  const list = async (req, res) => {
+  const listAll = async (req, res) => {
     try {
       const users = await app.repository.users.listAll();
       res.status(200).json(users);
@@ -29,6 +29,15 @@ module.exports = (app) => {
       res.status(500).send(error);
     }
   };
+  
+  const getById = async (req, res) => {
+    try {
+      const user = await app.repository.users.getById();
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  };
 
-  return { create, update, list, getById };
+  return { create, update, listAll, getById };
 };

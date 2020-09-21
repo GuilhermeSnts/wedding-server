@@ -20,5 +20,12 @@ module.exports = (app) => {
     return app.db("users").catch((err) => err);
   };
 
-  return { create, update, list };
+  const getById = async (id) => {
+    return app
+      .db("users")
+      .where(id)
+      .catch((err) => err);
+  };
+
+  return { create, update, list, getById };
 };
